@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+        
+	<title>ESP 8266</title>
+    <style>
+        #nav {
+            width: 100%;
+           text-align: center;
+           display: flex;
+          
+        }
+        #tepl{
+            background-color: white;
+        
+        }
+        .switch {
+    position: relative;
+    display: flex;
+    width: 60px;
+    height: 34px;
+    text-align: center;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: black;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px black;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+    </style>
+</head>
+<body>
+        <nav id="nav" class="navbar navbar-expand-sm navbar-light bg-dark ">
+            <div class="container-fluid ">
+                <a class="navbar-brand text-light " href="#">ESP 8266 Web Server</a>
+            </div>
+        </nav>
+        <div id="tepl">
+        <div class="container p-4 my-3 border" style="width: 30%;">
+            <h3 class="text-primary text-center">ESP8266 DHT Server</h3>
+            <div class="d-flex-reverse justify-content-around align-items-center">
+                <div class="d-flex justify-content-evenly">
+                    <p style="font-size: 90%;">Teplota °C</p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-evenly align-items-center">
+                    <p style="font-size: 90%;">Vlhkost %</p>
+                </div>
+                </div>
+        </div>
+
+            <div>
+                <div class="container p-4 my-3 border" style="width: 30%;">
+                    <h3 class="text-primary text-center">LED GPIO 4</h3>
+                    <div class="d-flex-reverse justify-content-around align-items-center ">
+                        <div class="d-flex justify-content-evenly pt-5 border-bottom border-dark border-5 pb-5"> 
+                            <p>off</p>
+                              <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                              </label>
+                            <p>on</p>
+                        </div>
+                        </div>
+                        </div>
+            </div>
+
+            <button id="btn" class="btn btn-primary">
+                <span class="spinner-border spinner-border-sm"></span>
+              </button>
+</body>
